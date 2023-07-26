@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9A68E8CC-16FE-43BB-99AA-24E2780F921F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Pruttel456.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Pruttel456">
+        <MSBuild Projects="Pruttel456.dproj"/>
+    </Target>
+    <Target Name="Pruttel456:Clean">
+        <MSBuild Projects="Pruttel456.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Pruttel456:Make">
+        <MSBuild Projects="Pruttel456.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Pruttel456"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Pruttel456:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Pruttel456:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
